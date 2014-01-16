@@ -10,7 +10,7 @@ module.exports = function(app){
 		});
 	});
 	app.get('/file',function(req,res){
-		res.render('index.html', {
+		res.render('file.html', {
 			title: 'File'
 		});
 	});	
