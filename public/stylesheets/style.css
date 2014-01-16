@@ -1,0 +1,33 @@
+body {font: 14px/1.8 'CustomFont','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;background-color: #F4F4F4;}
+a{outline:none!important; *hide-focus:expression(this.hideFocus=true);}
+a{text-decoration: none; color: #992222; outline:none;}
+a:visited{color:#992222;}
+a:hover,.selected{text-decoration: none; color:#FFFFFF;background-color: #992222;}
+a:active{color: #992222;}
+a.noHover:hover,.noHoverList a:hover{text-decoration: none;color:#992222; background-color: #FFFFFF;}
+
+.box{margin-bottom: 20px;padding: 10px;background-color: #FFFFFF;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);}
+.container{width: 98%;padding: 1%;border-bottom: 1px solid #CCCCCC;margin-top: 20px;}
+.wrap{width: 1190px;margin: 0 auto;}
+.lside{width: 870px;margin-right: 20px;float: left;}
+.rside{width: 300px;float: right;}
+.button {-moz-box-sizing: border-box;background-color: #21759B;background-image: linear-gradient(to bottom, #2A95C5, #21759B);border-color: #21759B #21759B #1E6A8D;border-radius: 3px;border-style: solid;border-width: 1px;box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset;color: #FFFFFF;cursor: pointer;display: inline-block;font-size: 14px;height: 30px;line-height: 25px;margin: 0;padding: 0 10px 1px;text-decoration: none;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);white-space: nowrap;}
+.input {padding: 5px;background: none repeat scroll 0 0 #FBFBFB;border: 1px solid #E9E9E9;box-shadow: 1px 1px 2px rgba(200, 200, 200, 0.2) inset;color: #666666;outline: 0 none;}
+/************ header start ************/
+.header{background: none repeat scroll 0 0 #FFFFFF;line-height:50px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);height:50px;position: relative;width: 100%;z-index: 1011;}
+.header-logo{font-size: 24px;font-weight: 'Microsoft YaHei';float: left;margin:0px 30px 0 15px;font-weight: bold;padding: 0 10px;background-color: #992222;color:#FFFFFF !important;}
+.header-side{float: right; }
+	.header-side a{display: block;font-size: 18px;padding: 0 20px;background-color: #992222;color:#FFFFFF;}
+.header-container{margin: 0 auto;}
+	.header-nav a{padding:0 20px;float: left; margin:0 5px;font-size: 18px;}
+/************ header end ************/
+
+.title{font-size: 24px;margin-bottom: 24px;font-weight: bold;}
+
+/************ footer start ************/
+.footer{border-top: 1px solid #FFFFFF;color: #999999;}
+	.footer a{color: #999999;}
+	.footer .blog:hover{text-decoration: none;color:#992222; background-color: #F4F4F4;}
+.footer-container{padding: 20px 1%;}
+/************ footer end ************/
+

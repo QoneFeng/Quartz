@@ -1,0 +1,91 @@
+/*element position start*/
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+.clear{clear:both; height:0; overflow:hidden; display:block;}
+.cl{clear:left;}
+.cr{clear:right;}
+.cfix{zoom:1;}
+.cfix:after{content:'clear'; display:block; visibility:hidden; clear:both; line-height:0px; height:0px;}
+/*element position end*/
+
+/*font set big, small, size fontfamily start*/
+.f60{ color:#FF6600;}
+.fwb{font-weight:bold;}
+.fwl{font-weight:lighter !important;}
+.fs12{font-size:12px !important;}
+.fs14{font-size:14px !important;}
+.fs16{font-size:16px !important;}
+.fs18{font-size:18px !important;}
+.fs20{font-size:20px !important;}
+.ffms{font-family:"微软雅黑", "黑体"}
+.st{font-family:'宋体';}
+.fsi{font-style:italic;}
+.ffgg{font-family:Georgia,sans-serif;}
+.yen{ font-family:Arial;}
+/*font set big, small, size fontfamily end*/
+
+/*content level direction start*/
+.tac{text-align:center;}
+.tar{text-align:right;}
+.tal{text-align:left;}
+/*content level direction end*/
+
+/*content vertical direction start*/
+.vam{vertical-align:middle;}
+.vat{vertical-align:top;}
+.vab{vertical-align:bottom;}
+/*content vertical direction end*/
+
+/*font color start*/
+.grayC{color:#CCCCCC;}
+.gray9{color:#999999;}
+.gray6{color:#666666;}
+.gray3{color:#333333;}
+.black{color:#000000;}
+.red{color:#c5262a;}
+.green{color:green;}
+.white{color:#FFFFFF;}
+/*font color end*/
+
+/*a color start*/
+.agrayC{color:#CCCCCC;}
+.agrayC:link{color:#CCCCCC;}
+.agrayC:visited{color:purple;}
+.agrayC:hover{color:#c5262a;}
+.agrayC:active{color:#c5262a;}
+
+.agray9{color:#999999;}
+.agray9:link{color:#999999;}
+.agray9:visited{color:purple;}
+.agray9:hover{color:#c5262a;}
+.agray9:active{color:#c5262a;}
+
+.agray6{color:#666666;}
+.agray6:link{color:#666666;}
+.agray6:visited{color:purple;}
+.agray6:hover{color:#c5262a;}
+.agray6:active{color:#c5262a;}
+
+.agray3{color:#333333;}
+.agray3:link{color:#333333;}
+.agray3:visited{color:purple;}
+.agray3:hover{color:#c5262a;}
+.agray3:active{color:#c5262a;}
+
+.ared{color:#c5262a;}
+.ared:link{color:#c5262a;}
+.ared:visited{color:purple;}
+.ared:hover{color:#c5262a;}
+.ared:active{color:#c5262a;}
+/*a color end*/
+
+
+/*overflow need hidden star*/
+.wsnhd{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+/*overflow need hidden end*/
+
+.dn,.sta{ display:none;}
+.box{margin-bottom:20px;}
+.sbox{margin-bottom:10px;}
+
+
