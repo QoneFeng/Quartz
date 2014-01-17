@@ -2,26 +2,41 @@ body {font: 14px/1.8 'CustomFont','Microsoft YaHei','WenQuanYi Micro Hei',sans-s
 a{outline:none!important; *hide-focus:expression(this.hideFocus=true);}
 a{text-decoration: none; color: #992222; outline:none;}
 a:visited{color:#992222;}
-a:hover,.selected{text-decoration: none; color:#FFFFFF;background-color: #992222;}
+a:hover{text-decoration: none; color:#FFFFFF;background-color: #992222;}
 a:active{color: #992222;}
-a.noHover:hover,.noHoverList a:hover{text-decoration: none;color:#992222; background-color: #FFFFFF;}
+a.noHover:hover,.noHoverList a:hover{text-decoration: none;color:#992222 !important; background-color: #FFFFFF;}
+h2{ font-size: 24px;font-weight: bold;}
 
 .box{margin-bottom: 20px;padding: 10px;background-color: #FFFFFF;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);}
 .container{width: 98%;padding: 1%;border-bottom: 1px solid #CCCCCC;margin-top: 20px;}
 .wrap{width: 1190px;margin: 0 auto;}
 .lside{width: 400px;margin-right: 20px;float: left;}
 .rside{width:770px ;float: right;}
+.inputTxt,.searchTxt{width: 290px;border: 1px solid #EBE9E7;letter-spacing: 1px;padding: 0.5em;}
+.inputBut{border: 1px solid rgba(0, 0, 0, 0);background-color: #992222;border-radius: 0;color: #FFFFFF;cursor: pointer;display: inline-block;line-height: normal;padding: 0.5em 2em;text-align: center;vertical-align: baseline;height: 36px;}
 /************ header start ************/
-.header{background: none repeat scroll 0 0 #FFFFFF;line-height:50px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);height:50px;position: relative;width: 100%;z-index: 1011;}
-.header-logo{font-size: 24px;font-weight: 'Microsoft YaHei';float: left;margin:0px 30px 0 15px;font-weight: bold;padding: 0 10px;background-color: #992222;color:#FFFFFF !important;}
-.header-side{float: right; }
+.header{padding: 0 15px;background: none repeat scroll 0 0 #FFFFFF;line-height:50px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);height:50px;position: relative;z-index: 1011;}
+.header-logo{font-size: 24px;font-weight: 'Microsoft YaHei';float: left;margin-right: 30px;font-weight: bold;padding: 0 10px;background-color: #992222;color:#FFFFFF !important;}
+.header-side{float: right;}
 	.header-side a{display: block;font-size: 18px;padding: 0 20px;background-color: #992222;color:#FFFFFF;}
 .header-container{margin: 0 auto;}
 	.header-nav a{padding:0 20px;float: left; margin:0 5px;font-size: 18px;}
 /************ header end ************/
 
-.title{font-size: 24px;margin-bottom: 24px;font-weight: bold;}
+.about{}
+.about h1{font-size: 24px;text-align: center;}
 
+.toolNav{margin-bottom: 20px;}
+	.toolNav a{margin-right: 10px;padding: 10px 15px;}
+	.toolNav span{margin-right: 10px;padding: 10px 15px; font-weight: bold;}
+.fileInfo{min-height: 300px;}
+	.fileInfo h2{font-size: 18px;}
+
+.searchBox{}
+	.searchBox .inputBut{width: 216px;float: right;height: 216px;font-size: 36px;}
+	.searchTxt{width: 80%;float: left;height: 200px;margin-bottom: 20px;}
+.searchInfo{}
+	
 /************ footer start ************/
 .footer{border-top: 1px solid #FFFFFF;color: #999999;}
 	.footer a{color: #999999;}

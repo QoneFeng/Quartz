@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Quartz</title>
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/stylesheets/base/reset-min.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/base/base.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/zTreeStyle/zTreeStyle.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" /> 
+<script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/javascripts/zTree/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript">
+<!--
+var setting = {
+	view: {
+		dblClickExpand: false,
+		showLine: false
+	},	
+	data: {
+		key: {
+			title:"qTitle"
+			
+		},
+		simpleData: {
+			enable: true
+		}
+	},
+	callback: {
+		onClick: onClick	
+	}
+};
+
+var zNodes =[
+	{ id:1, pId:0, name:"普通的父节点", qTitle:"我很普通，随便点我吧", open:true},
+	{ id:11, pId:1, name:"叶子节点 - 1", qTitle:"我很普通，随便点我吧",qIsEdit:true,qUrl:"www.jobui.com/jobs", click:false},
+	{ id:12, pId:1, name:"叶子节点 - 2", qTitle:"我很普通，随便点我吧",qIsEdit:true,qUrl:"www.jobui.com/cmp", click:false},
+	{ id:13, pId:1, name:"叶子节点 - 3", qTitle:"我很普通，随便点我吧",qIsEdit:true,qUrl:"www.jobui.com", click:false},
+	{ id:2, pId:0, name:"NB的父节点", qTitle:"点我可以，但是不能点我的子节点，有本事点一个你试试看？", open:true},
+	{ id:21, pId:2, name:"叶子节点2 - 1", qTitle:"你哪个单位的？敢随便点我？小心点儿..", click:false},
+	{ id:22, pId:2, name:"叶子节点2 - 2", qTitle:"我有老爸罩着呢，点击我的小心点儿..", click:false},
+	{ id:23, pId:2, name:"叶子节点2 - 3", qTitle:"好歹我也是个领导，别普通群众就来点击我..", click:false},
+	{ id:3, pId:0, name:"郁闷的父节点", qTitle:"别点我，我好害怕...我的子节点随便点吧...", open:true, click:false },
+	{ id:31, pId:3, name:"叶子节点3 - 1", qTitle:"唉，随便点我吧"},
+	{ id:32, pId:3, name:"叶子节点3 - 2", qTitle:"唉，随便点我吧"},
+	{ id:33, pId:3, name:"叶子节点3 - 3", qTitle:"唉，随便点我吧"}
+];
+function beforeClick(treeId, treeNode, clickFlag) {
+	
+}
+function onClick(event, treeId, treeNode, clickFlag) {
+	var $fileInfo = $("#fileInfo");
+	var info = "";
+	if(typeof(treeNode.qTitle) != 'undefined'){
+		info += "<h2>"+treeNode.qTitle+"</h2>";
+	}	
+	if(typeof(treeNode.qIsEdit) != 'undefined'){
+		info += "<p><span>是否可上传：</span>"+treeNode.qIsEdit+"</p>";
+	}
+	if(typeof(treeNode.qUrl) != 'undefined'){
+		info += "<p><span>访问地址：</span><a href='"+treeNode.qUrl+"'>"+treeNode.qUrl+"</a></p>";
+	}
+	$fileInfo.html(info);	
+	var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+	zTree.expandNode(treeNode);
+}	
+$(document).ready(function(){
+	$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+});
+//-->
+</script>
+</head>
+<body>
+<%- include ../part/header.html %>
+<div class="container cfix">
+	<div class="wrap">
+		<nav class="toolNav">
+			<span>文件管理</span>
+			<a href="/file/search">查询路径</a>
+		</nav>
+		<div class="lside">
+			<div class="noHoverList fileList box">
+				<ul id="treeDemo" class="ztree"></ul>
+			</div>
+		</div>
+		<div class="rside">
+			<div class="box fileInfo" id="fileInfo">
+				<div class="about">
+					<h1>Quartz 文件管理系统</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include ../part/footer.html %>
+</body>
+</html>
