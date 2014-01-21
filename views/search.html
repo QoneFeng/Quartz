@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Quartz</title>
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/stylesheets/base/reset-min.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/base/base.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" /> 
+<script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+var zNodes =[
+	{ name:"jobuiV4_html", open:true,
+		children: [
+			{ name:"js - 公用JavaScript",
+				children: [
+					{ name:"common1",url:"common1"},
+					{ name:"jquery1",url:"jquery1"}
+				]
+			},
+			{ name:"template_1 - 模板",open:true,
+				children: [
+					{ name:"_part - 公用模板",
+						children: [
+							{ name:"common2",url:"common2"},
+							{ name:"jquery2",url:"jquery2"},
+							{ name:"jobuiV4_html2", open:true,
+								children: [
+									{ name:"js - 公用JavaScript2",
+										children: [
+											{ name:"common3",url:"common3"},
+											{ name:"jquery3",url:"jquery3"}
+										]
+									},
+									{ name:"template_1 - 模板3",
+										children: [
+											{ name:"_part - 公用模板34",
+												children: [
+													{ name:"common4",url:"common4"},
+													{ name:"jquery4",url:"jquery4"}
+												]
+											},
+											{ name:"about - about.jobui.com35", isParent:true},
+											{ name:"adminV2 - admin.jobui.com35", isParent:true},
+											{ name:"js - 页面公用JavaScript35", isParent:true},
+											{ name:"mobile - m.jobui.com35", isParent:true},
+											{ name:"site - www.jobui.com35", isParent:true},
+											{ name:"styles - 页面css35", isParent:true}
+										]
+									}
+								]
+							}							
+						]
+					},
+					{ name:"about - about.jobui.com", isParent:true},
+					{ name:"adminV2 - admin.jobui.com", isParent:true},
+					{ name:"js - 页面公用JavaScript", isParent:true},
+					{ name:"mobile - m.jobui.com", isParent:true},
+					{ name:"site - www.jobui.com", isParent:true},
+					{ name:"styles - 页面css", isParent:true}
+				]
+			}
+		]
+	}
+];
+
+$(document).ready(function(){
+	var qPathArr = [];
+	var searchPathArr = [];
+	function forObj(obj){
+		jQuery.each(obj,function(key,val) {
+			if(typeof(val['children']) == "array"){
+				forObj(val['children']);
+			}else if(!val['isParent']){
+				// console.log("这个URL："+val['url'])
+				qPathArr.push(val['url']);
+			}else{
+				console.log("这是一个空文件夹："+val["name"])
+			}		
+		});		
+	}
+	function arrayIntersection(a, b){
+		var ai=0, bi=0;
+		var result = new Array();
+		while( ai < a.length && bi < b.length ){
+			if(a[ai] < b[bi] ){
+				ai++;
+			}else if (a[ai] > b[bi] ){ 
+				bi++; 
+			}else{
+				result.push(a[ai]);
+				ai++;
+				bi++;
+			}
+		}
+		return result;
+	}
+
+	jQuery(".j-submit").click(function(event) {
+		var searchTxt = $(".j-searchTxt").val();
+		searchPathArr = searchTxt.split("\n");
+		forObj(zNodes);
+		console.log(qPathArr);
+		console.log(searchPathArr);
+		var result = arrayIntersection(qPathArr,searchPathArr);
+		if(result != ""){
+			$("#searchInfo").html("<span class='red'>不能上传：</span>"+result);
+		}else{
+			$("#searchInfo").html("<p style='color:#a6ce39'>噢耶！都可以上传</p>");
+		}
+	});
+});
+</script>
+</head>
+<body>
+<%- include /part/header.html %>
+<div class="container cfix">
+	<div class="wrap">
+		<div class="box searchInfo">
+			<h2>查询结果：<em class="url"><%= url %></em></h2>
+			<div id="searchInfo"></div>
+		</div>
+	</div>
+</div>
+<%- include /part/footer.html %>
+</body>
+</html>

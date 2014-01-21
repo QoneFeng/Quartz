@@ -2,11 +2,12 @@ body {font: 14px/1.8 'CustomFont','Microsoft YaHei','WenQuanYi Micro Hei',sans-s
 a{outline:none!important; *hide-focus:expression(this.hideFocus=true);}
 a{text-decoration: none; color: #992222; outline:none;}
 a:visited{color:#992222;}
-a:hover{text-decoration: none; color:#FFFFFF;background-color: #992222;}
+a:hover,.selected{text-decoration: none; color:#FFFFFF;background-color: #992222;}
 a:active{color: #992222;}
 a.noHover:hover,.noHoverList a:hover{text-decoration: none;color:#992222 !important; background-color: #FFFFFF;}
-h2{ font-size: 24px;font-weight: bold;}
+h2{ font-size: 24px;font-weight: bold;border-bottom:1px solid #EEEEEE; margin-bottom: 10px;padding: 0 10px;}
 
+.selected{color:#FFFFFF !important;}
 .box{margin-bottom: 20px;padding: 10px;background-color: #FFFFFF;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);}
 .container{width: 98%;padding: 1%;border-bottom: 1px solid #CCCCCC;margin-top: 20px;}
 .wrap{width: 1190px;margin: 0 auto;}
@@ -35,7 +36,10 @@ h2{ font-size: 24px;font-weight: bold;}
 .searchBox{}
 	.searchBox .inputBut{width: 216px;float: right;height: 216px;font-size: 36px;}
 	.searchTxt{width: 80%;float: left;height: 200px;margin-bottom: 20px;}
-.searchInfo{}
+.searchInfo{min-height: 250px;}
+	.searchInfo .url{font-size: 14px;color: green;}
+	.noUploadInfo{color: #C7254E;background-color: #F9F2F4;padding: 10px;margin-bottom: 20px;}
+	.yesUploadInfo{color: #008080;background-color: #F7F7F9;padding: 10px;}
 	
 /************ footer start ************/
 .footer{border-top: 1px solid #FFFFFF;color: #999999;}

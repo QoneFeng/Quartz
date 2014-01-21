@@ -74,10 +74,7 @@ $(document).ready(function(){
 <%- include ../part/header.html %>
 <div class="container cfix">
 	<div class="wrap">
-		<nav class="toolNav">
-			<span>文件管理</span>
-			<a href="/file/search">查询路径</a>
-		</nav>
+		<%- include /modules/nav.html %>
 		<div class="lside">
 			<div class="noHoverList fileList box">
 				<ul id="treeDemo" class="ztree"></ul>
