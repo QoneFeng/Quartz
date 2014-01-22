@@ -1,77 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<title>Quartz</title>
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="/stylesheets/base/reset-min.css" />
-<link rel="stylesheet" type="text/css" href="/stylesheets/base/base.css" />
-<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" /> 
-<script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="/javascripts/common.js"></script>
-<script type="text/javascript">
-var zNodes =[
-	{ id:1, pId:0, name:"jobuiV4_html",qFileName:'jobuiV4_html', qTitle:"HTML模板", open:true},
-	{ id:11, pId:1, name:"js - 公用JavaScript",qFileName:'js', qTitle:"我很普通，随便点我吧",qIsEdit:false,qUrl:"/jobuiV4/app/site/module/rank/RankModule.php", click:false},
-	{ id:111, pId:11, name:"common1",qFileName:'common', qTitle:"common1",qIsEdit:true,qUrl:"/jobuiV4/app/mobile/industry/index.php", click:false},
-	{ id:112, pId:11, name:"jquery1",qFileName:'jquery', qTitle:"jquery1",qIsEdit:true,qUrl:"/jobuiV4_html/template_1/mobile/industry/index.html", click:false}
-];
-
-$(document).ready(function(){
-	var qPathArr = [];
-	var searchPathArr = [];
-	jQuery(".j-submit").click(function(event) {
-		var searchTxt = $(".j-searchTxt").val();
-		searchPathArr = searchTxt.split("\n");
-		jQuery.each(zNodes,function(key,val) {
-			if(typeof(val['qUrl']) == "string" && val['qIsEdit'] ===true){
-				qPathArr.push(val['qUrl']);
-			}		
-		});	
-		console.log(qPathArr);
-		console.log(searchPathArr);
-		var noUploadArr = searchPathArr.intersect(qPathArr);
-		var yesUploadArr = ArraySubtraction(searchPathArr,qPathArr);	//获取两个数组查集
-		var searchInfoInfo = '';
-		if(typeof(noUploadArr) == "object"){
-			searchInfoInfo = '<div class="noUploadInfo">';
-			jQuery.each(noUploadArr,function(key,val) {
-				searchInfoInfo += "<p><span class='red'>不能上传：</span>"+val+"</p>";
-			});
-			searchInfoInfo += '</div>';			
-		}
-		if(typeof(yesUploadArr) == "object"){
-			searchInfoInfo += '<div class="yesUploadInfo">';
-			jQuery.each(yesUploadArr,function(key,val) {
-				searchInfoInfo += "<p><span class='green'>可以上传：</span>"+val+"</p>";
-			});
-			searchInfoInfo += '</div>'
-		}
-		$("#searchInfo").html(searchInfoInfo);
-	});
-});
-</script>
+	<meta charset="UTF-8" />
+	<title>Quartz</title>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/base/reset-min.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/base/base.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+	<script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="/javascripts/common.js"></script>
 </head>
 <body>
-<%- include ../part/header.html %>
-<div class="container cfix">
-	<div class="wrap">
-		<%- include /modules/nav.html %>
-		<div class="searchBox cfix">
-			<div calss="fl">
-				<textarea class="searchTxt j-searchTxt" id="searchTxt" placeholder="请输入查找的文件路径"></textarea>
-			</div>
-			<div class="fr">
-				<input type="button" value="查找" class="inputBut j-submit">
-			</div>
-		</div>
-		<div class="box searchInfo">
-			<h2>查询结果</h2>
-			<div id="searchInfo">
+	<%- include ../part/header.html %>
+	<div class="container cfix">
+		<div class="wrap">
+			<%- include /modules/nav.html %>
+			<div class="box searchInfo">
+				<h2>查询结果</h2>
 			</div>
 		</div>
 	</div>
-</div>
-<%- include ../part/footer.html %>
-</body>
+	<%- include ../part/footer.html %></body>
 </html>
