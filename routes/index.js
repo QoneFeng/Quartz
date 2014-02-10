@@ -1,7 +1,7 @@
 /*
  * GET home page.
  */
-var mongodb = require('./models/db');
+var mongodb = require('../models/db');
 module.exports = function(app) {
 	app.get('/', function(req, res) {
 		res.redirect(301, '/file/');
@@ -34,7 +34,9 @@ module.exports = function(app) {
 
 	app.get('/file/add', function(req, res) {
 		res.render('file/add.html', {
-			title: '新增文件'
+			title: '新增文件',
+			success: req.flash('success').toString(),
+			error: req.flash('error').toString()
 		});
 	});
 	app.post('/file/add', function(req, res) {
@@ -62,28 +64,31 @@ module.exports = function(app) {
 		//打开数据库
 		mongodb.open(function(err, db) {
 			if (err) {
-				return callback(err);
+				req.flash('error', err);
+				return res.redirect('/file/add');
 			}
-			//读取 posts 集合
-			db.collection('posts', function(err, collection) {
+			//读取 file 集合
+			db.collection('file', function(err, collection) {
 				if (err) {
 					mongodb.close();
-					return callback(err);
+					req.flash('error', err);
+					return res.redirect('/file/add');
 				}
-				//将文档插入 posts 集合
-				//
+				console.log(file);
 				collection.insert(file, {
 					safe: true
 				}, function(err) {
 					mongodb.close();
 					if (err) {
-						return callback(err); //失败！返回 err
+						req.flash('error', err); //失败！返回 err
+						return res.redirect('/file/add');
 					}
-					callback(null); //返回 err 为 null
+					req.flash('success', '发布成功!');
+					res.redirect('/file/');//添加成功后返回首页
 				});
 			});
 		});
-		req.flash('success', '发布成功!');
+		
 	});
 
 	app.get('/upload/', function(req, res) {
