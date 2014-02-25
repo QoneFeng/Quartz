@@ -20,6 +20,7 @@ module.exports = function(app) {
 		res.render('file/index.html', {
 			title: '文件管理'
 		});
+		
 	});
 	app.get('/file/search', function(req, res) {
 		res.render('file/search.html', {
@@ -74,7 +75,7 @@ module.exports = function(app) {
 					req.flash('error', err);
 					return res.redirect('/file/add');
 				}
-				console.log(file);
+				
 				collection.insert(file, {
 					safe: true
 				}, function(err) {
@@ -84,11 +85,11 @@ module.exports = function(app) {
 						return res.redirect('/file/add');
 					}
 					req.flash('success', '发布成功!');
-					res.redirect('/file/');//添加成功后返回首页
+					res.redirect('/file/'); //添加成功后返回首页
 				});
 			});
 		});
-		
+
 	});
 
 	app.get('/upload/', function(req, res) {
@@ -99,6 +100,15 @@ module.exports = function(app) {
 	app.get('/upload/search', function(req, res) {
 		res.render('upload/search.html', {
 			title: '路径查询'
+		});
+	});
+
+	app.get('/monitor/', function(req, res) {
+		res.redirect(301, '/monitor/jobui/weixin');
+	});	
+	app.get('/monitor/jobui/weixin', function(req, res) {
+		res.render('monitor/jobui/weixin.html', {
+			title: '微信公众号'
 		});
 	});
 };

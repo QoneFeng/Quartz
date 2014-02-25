@@ -2,22 +2,12 @@ body {font: 14px/1.8 'CustomFont','Microsoft YaHei','WenQuanYi Micro Hei',sans-s
 a{outline:none!important; *hide-focus:expression(this.hideFocus=true);}
 a{text-decoration: none; color: #992222; outline:none;}
 a:visited{color:#992222;}
-a:hover,.selected{text-decoration: none; color:#FFFFFF;background-color: #992222;}
+a:hover{text-decoration: none; color:#FFFFFF;background-color: #992222;}
 a:active{color: #992222;}
 a.noHover:hover,.noHoverList a:hover{text-decoration: none;color:#992222 !important; background-color: #FFFFFF;}
 h2{ font-size: 24px;font-weight: bold;border-bottom:1px solid #EEEEEE; margin-bottom: 10px;padding: 0 10px;}
-select {
-	background: none repeat scroll 0 0 #FAFAFA;
-	border: 2px solid #E6E6E6;
-	border-radius: 2px;
-	box-shadow: none;
-	font-size: 13px;
-	font-weight: 400;
-	outline: medium none;
-	padding: 6.5px 12px;}
-select:hover {border-color: #E6E6E6;}
 
-.selected{color:#FFFFFF !important;}
+.selected,.toolNav a:hover,.header-nav a:hover{border-bottom: 3px solid #992222;}
 .box{margin-bottom: 20px;padding: 10px;background-color: #FFFFFF;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);}
 .container{width: 98%;padding: 1%;border-bottom: 1px solid #CCCCCC;margin-top: 20px;}
 .wrap{width: 1190px;margin: 0 auto;}
@@ -39,6 +29,7 @@ select:hover {border-color: #E6E6E6;}
 
 .toolNav{margin-bottom: 20px;}
 	.toolNav a{margin-right: 10px;padding: 10px 15px;}
+	.toolNav a:hover{background-color: #F4F4F4;}
 	.toolNav span{margin-right: 10px;padding: 10px 15px; font-weight: bold;}
 .fileInfo{min-height: 300px;}
 	.fileInfo h2{font-size: 18px;}

@@ -1,80 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title><%= title %></title>
-	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/base/reset.css" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/base/base.css" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-	<script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
-	<script type="text/javascript" src="/javascripts/common.js"></script>
-</head>
-<body>
-	<%- include ../part/header.html %>
-	<div class="container cfix">
-		<div class="wrap">
-			<%- include /modules/nav.html %>
-			<div class="box">
-				<h2>新增页面</h2>
-				<form action="/file/add" method="post">
-					<ul class="formList">
-						<li>
-							<label for="name">文件夹：</label>
-							<select name="folder" id="folder">
-								<option value="1" data-pID="0">jobuiV4_html</option>
-							</select>
-							<select name="folder" id="folder">
-								<option value="102" data-pID="1">template_1</option>
-								<option value="101" data-pID="1">js</option>
-							</select>
-							<select name="folder" id="folder">
-								<option value="10201" data-pID="102">site</option>
-								<option value="10202" data-pID="102">js</option>
-							</select>
-						</li>
-						<li>
-							<label for="name">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label>
-							<input class="inputTxt" id="name" name="name" type="text" value="名称">
-							<span class="tips">如：info</span>
-						</li>
-						<li>
-							<label for="qFileName">文&nbsp;件&nbsp;名&nbsp;：</label>
-							<input class="inputTxt" id="qFileName" name="qFileName" type="text" value="文件名">
-							<span class="tips">名称+文件后缀名，如：info.html</span>
-						</li>
-						<li>
-							<label for="qTitle">页面名称：</label>
-							<input class="inputTxt" id="qTitle" name="qTitle" type="text" value="页面名称">
-							<span class="tips">填写改页面名称，如：职位页</span>
-						</li>
-						<li>
-							<label>是否编辑：</label>
-							<label class="labelRadio" for="qIsEdit_Y">
-								<input value="true" type="radio" checked="checked" name="qIsEdit" id="qIsEdit_Y">是
-							</label>
-							<label class="labelRadio" for="qIsEdit_N">
-								<input value="false" type="radio" name="qIsEdit" id="qIsEdit_N">否
-							</label>
-						</li>
-						<li>
-							<label for="qUrl">访问地址：</label>
-							<input class="inputTxt" id="qUrl" name="qUrl" type="url" value="http://www.jobui.com/company/4134/">
-							<span class="tips">该页面的访问地址，如：http://www.jobui.com/company/4134/</span>
-						</li>
-						<li>
-							<label for="qPathUrl">文件路径：</label>
-							<input class="inputTxt" id="qPathUrl" name="qPathUrl" type="text" value="文件路径">
-							<span class="tips">如：/jobuiV4_html/template_1/site/job/info.html</span>
-						</li>
-						<li>
-							<input class="inputBut" type="submit" value="提交">
-						</li>
-					</ul>
-				</form>
-			</div>
+<%- include ../part/header.html %>
+<div class="container cfix">
+	<div class="wrap">
+		<%- include /modules/nav.html %>
+		<div class="box">
+			<h2>新增页面</h2>
+			<form action="/file/add" method="post">
+				<ul class="formList">
+					<li>
+						<label for="name">文件夹：</label>
+						<select name="folder" id="folder">
+							<option value="1" data-pID="0">jobuiV4_html</option>
+						</select>
+						<select name="folder" id="folder">
+							<option value="102" data-pID="1">template_1</option>
+							<option value="101" data-pID="1">js</option>
+						</select>
+						<select name="folder" id="folder">
+							<option value="10201" data-pID="102">site</option>
+							<option value="10202" data-pID="102">js</option>
+						</select>
+					</li>
+					<li>
+						<label for="name">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label>
+						<input class="inputTxt" id="name" name="name" type="text" value="名称">
+						<span class="tips">如：info</span>
+					</li>
+					<li>
+						<label for="qFileName">文&nbsp;件&nbsp;名&nbsp;：</label>
+						<input class="inputTxt" id="qFileName" name="qFileName" type="text" value="文件名">
+						<span class="tips">名称+文件后缀名，如：info.html</span>
+					</li>
+					<li>
+						<label for="qTitle">页面名称：</label>
+						<input class="inputTxt" id="qTitle" name="qTitle" type="text" value="页面名称">
+						<span class="tips">填写改页面名称，如：职位页</span>
+					</li>
+					<li>
+						<label>是否编辑：</label>
+						<label class="labelRadio" for="qIsEdit_Y">
+							<input value="true" type="radio" checked="checked" name="qIsEdit" id="qIsEdit_Y">是
+						</label>
+						<label class="labelRadio" for="qIsEdit_N">
+							<input value="false" type="radio" name="qIsEdit" id="qIsEdit_N">否
+						</label>
+					</li>
+					<li>
+						<label for="qUrl">访问地址：</label>
+						<input class="inputTxt" id="qUrl" name="qUrl" type="url" value="http://www.jobui.com/company/4134/">
+						<span class="tips">该页面的访问地址，如：http://www.jobui.com/company/4134/</span>
+					</li>
+					<li>
+						<label for="qPathUrl">文件路径：</label>
+						<input class="inputTxt" id="qPathUrl" name="qPathUrl" type="text" value="文件路径">
+						<span class="tips">如：/jobuiV4_html/template_1/site/job/info.html</span>
+					</li>
+					<li>
+						<input class="inputBut" type="submit" value="提交">
+					</li>
+				</ul>
+			</form>
 		</div>
 	</div>
-	<%- include ../part/footer.html %>
-</body>
-</html>
+</div>
+<%- include ../part/footer.html %>

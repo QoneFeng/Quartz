@@ -1,0 +1,70 @@
+<%- include ../../part/header.html %>
+<div class="container cfix">
+	<div class="wrap">
+		<%- include /modules/nav.html %>
+		<div class="box">
+			<h2>微信公众号数据报表</h2>
+			<div id="weixinData"></div>
+		</div>
+	</div>
+</div>
+<%- include ../../part/footer.html %>
+<script type="text/javascript" charset="utf-8" src="http://cdnjs4.jobui.com/template_1/js/common/highcharts/highcharts.js"></script>
+<script type="text/javascript">
+/*曲线JS start*/
+var categoriesArray = dateArray('2014-02-10');
+//console.log(categoriesArray);
+var seriesArray = [{
+			name: '消息发送人数',
+			data: [666,634,521,255,189,180,238,335,338,259,295,441,355,256]
+		},{
+			name: '浏览量(PV)',
+			data: [478,374,377,2908,1939,1729,1920,2512,2459,2399,2152,2298,1921,1547]
+		},{
+			name: '贡献下游浏览量',
+			data: [182,152,107,1551,1131,964,1033,1316,1233,1152,1114,1216,947,823]
+		}];
+function graph(){
+	// getDate()
+	var workLengthSalary = new Highcharts.Chart({
+		chart: {
+			renderTo: 'weixinData',
+			type: 'line',
+			height: 300,
+			marginTop: 20,
+			marginRight: 100,
+			marginBottom: 30,
+			width: 1170
+		},
+		title: {
+			text: '',
+		},
+		series: seriesArray,
+		xAxis: {
+			categories: categoriesArray
+		},
+		yAxis: {
+			plotLines: [{
+				value: 0,
+				width: 1,
+				color: '#808080'
+			}]
+		},
+		tooltip: {
+			formatter: function() {
+				return '<b>' + this.x + ':</b>' + this.y;
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'top',
+			x: -10,
+			y: 100,
+			borderWidth: 0
+		}
+	});
+}
+graph();
+/*曲线JS end*/
+</script>
